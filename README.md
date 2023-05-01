@@ -1,24 +1,26 @@
-# README
+# YXNrbXlib29r 🤔
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+If the name of this app doesn't make any sense try decoding it with base64 🙃
 
-Things you may want to cover:
+## Tech stack:
+* Backend: Ruby 3.2.2, Rails 7
+* Frontend: Yarn, JavaScript, React
 
-* Ruby version
+## Run
+**DB**
 
-* System dependencies
+TODO
 
-* Configuration
+**Server**
 
-* Database creation
+Inside the `YXNrbXlib29r` folder:
+> bin/dev
 
-* Database initialization
+Runs on port `3000`
+> http://localhost:3000/
 
-* How to run the test suite
+## Test
+TODO
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Deploy
+TODO
