@@ -1,5 +1,4 @@
 import React from "react";
-import Answer from "./Answer";
 
 export default QuestionBox = ({ questionPresenter }) => {
     const [question, setQuestion] = React.useState(questionPresenter.getDefaultQuestion());

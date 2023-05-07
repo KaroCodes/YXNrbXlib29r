@@ -5,7 +5,7 @@ require 'pdf/reader'
 require 'tokenizers'
 require 'rover-df'
 require 'numo/narray'
-require "openai"
+require 'openai'
 
 include OpenAI
 include Rover
