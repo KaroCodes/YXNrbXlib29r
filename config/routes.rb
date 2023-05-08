@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "/questions", to: "questions#index"
   get "/questions/:id", to: "questions#show"
   get "/ask", to: "questions#ask"
+  get "/random", to: "questions#random"
 end

@@ -58,6 +58,15 @@ class Question < ApplicationRecord
         return { answer: answer }
     end
 
+    def self.random()
+        id = rand(Question.count)
+        match = Question.find(id)
+        return {
+            question: match[:question],
+            answer: match[:answer]
+        }
+    end
+
     private
 
         # use OpenAI Completion endpoint to summarize the knowledge from the book

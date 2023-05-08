@@ -4,11 +4,13 @@ import cover from "./assets/cover.png";
 import QuestionBox from "./QuestionBox";
 import { QuestionPresenter } from "./question_presenter";
 
-const BOOK_LINK = "https://www.amazon.com/Minimalist-Entrepreneur-Great-Founders-More/dp/0593192397";
+const BOOK_LINK = "https://math.hws.edu/graphicsbook/";
 const WEBSITE_LINK = "https://www.karo.codes/";
 const GITHUB_LINK = "https://github.com/KaroCodes/YXNrbXlib29r";
 
-const questionPresenter = new QuestionPresenter();
+const BASE_URL = 'http://localhost:3000/';
+const DEFAULT_QUESTION = "What is the Introduction to Computer Graphics about?";
+const questionPresenter = new QuestionPresenter(BASE_URL, DEFAULT_QUESTION);
 
 export default Home = () => {
     return (

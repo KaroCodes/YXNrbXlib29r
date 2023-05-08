@@ -3,6 +3,7 @@ import React from "react";
 export default QuestionBox = ({ questionPresenter }) => {
     const [question, setQuestion] = React.useState(questionPresenter.getDefaultQuestion());
     const [answer, setAnswer] = React.useState(null);
+    const [loading, setLoading] = React.useState(false);
 
     const onQuestionChange = React.useCallback((e) => {
         setQuestion(e.target.value);
@@ -14,8 +15,10 @@ export default QuestionBox = ({ questionPresenter }) => {
             alert('Please ask a question!');
             return;
         }
+        setLoading(true);
         const answer = await questionPresenter.getAnswer(question);
         setAnswer(answer);
+        setLoading(false);
     }, [questionPresenter, question, setAnswer]);
 
     const onAnswerRandomQuestionClick = React.useCallback(async () => {
@@ -42,8 +45,18 @@ export default QuestionBox = ({ questionPresenter }) => {
                 </div>
             ) : (
                 <div className="buttons">
-                    <button className="primary" onClick={onAnswerClick}>Ask question</button>
-                    <button className="secondary" onClick={onAnswerRandomQuestionClick}>I'm feeling lucky</button>
+                    <button
+                        className="primary"
+                        onClick={onAnswerClick}
+                        disabled={loading}>
+                        {loading ? 'Loading...' : 'Ask question'}
+                    </button>
+                    <button
+                        className="secondary"
+                        onClick={onAnswerRandomQuestionClick}
+                        disabled={loading}>
+                        I'm feeling lucky
+                    </button>
                 </div >
             )}
         </div >

@@ -15,12 +15,8 @@ class QuestionsController < ApplicationController
         render json: @answer
     end
 
-    def create
-        @question = Question.create(
-            question: params[:question],
-            answer: params[:answer]
-        )
+    def random
+        @question = Question.random()
         render json: @question
     end
-
 end
