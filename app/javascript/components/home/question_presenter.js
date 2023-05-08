@@ -1,4 +1,8 @@
-const DEFAULT_QUESTION = "What is The Minimalist Entrepreneur about?";
+import axios from 'axios';
+
+const BASE_URL = 'http://localhost:3000/';
+
+const DEFAULT_QUESTION = "What is the Introduction to Computer Graphics about?";
 
 const CACHED_QUESTIONS = [
     {
@@ -28,12 +32,10 @@ export class QuestionPresenter {
         return DEFAULT_QUESTION;
     }
 
-    getAnswer(question) {
-        const record = CACHED_QUESTIONS.find(record => record.question === question);
-        if (!record) {
-            return Promise.resolve('TODO');
-        }
-        return Promise.resolve(record.answer);
+    async getAnswer(question) {
+        const queryParams = new URLSearchParams({ question })
+        const askQuestionUrl = `${BASE_URL}/ask?${queryParams.toString()}`
+        return axios.get(askQuestionUrl).then((res) => res.data.answer);
     }
 
     answerRandomQuestion() {

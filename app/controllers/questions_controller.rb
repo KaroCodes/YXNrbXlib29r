@@ -11,8 +11,8 @@ class QuestionsController < ApplicationController
     end
 
     def ask
-        @question = Question.ask(params[:question])
-        render json: @question
+        @answer = Question.ask(params[:question])
+        render json: @answer
     end
 
     def create

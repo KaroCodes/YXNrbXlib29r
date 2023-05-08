@@ -27,10 +27,10 @@ class Question < ApplicationRecord
             question = "#{question}?"
         end
 
-        answer = Question.where(question: question).first()
+        match = Question.where(question: question).first()
 
-        if answer
-            return answer
+        if match
+            return { answer: match[:answer] }
         end
 
         # load existing embeddings from file
@@ -55,7 +55,7 @@ class Question < ApplicationRecord
             answer: answer
         )
 
-        return answeredQuestion
+        return { answer: answer }
     end
 
     private
@@ -65,7 +65,7 @@ class Question < ApplicationRecord
             header = "Introduction to Computer Graphics is a book written by David J. Eck. Please keep your answers to three sentences maximum, and speak in complete sentences.\n\nContext that may be useful, pulled from the Introduction to Computer Graphics:\n"
             footer = "\n\nQuestion: #{question} \n\nAnswer: "
             prompt = header + sections + footer
-            puts prompt
+
             res = openAi.completions(
                 parameters: {
                     model: COMPLETION_MODEL,
