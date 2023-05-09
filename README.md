@@ -5,6 +5,7 @@ If the name of this app doesn't make any sense try decoding it with base64 🙃
 ## Tech stack:
 * Backend: Ruby 3.2.2, Rails 7
 * Frontend: Yarn, JavaScript, React
+* Test: RSpec, FactoryBot
 
 ## Run
 
@@ -20,7 +21,7 @@ where `pdf_file` can be for example `graphicsbook.pdf`:
 
 **DB**
 
-TODO
+SQLite
 
 **Server**
 
@@ -33,7 +34,14 @@ Runs on port `3000`
     http://localhost:3000/
 
 ## Test
-TODO
+
+To test all services run:
+
+    rspec spec/services/*
+
+To test individual service (e.g. `SectionPicker`) run:
+
+    rspec spec/services/section_picker_spec.rb
 
 ## Deploy
 TODO
