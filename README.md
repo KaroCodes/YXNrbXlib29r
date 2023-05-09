@@ -21,7 +21,13 @@ where `pdf_file` can be for example `graphicsbook.pdf`:
 
 **DB**
 
-SQLite
+SQLite (for actual production should use PostgreSQL or something else that deals with concurrent writing better)
+
+To initialize run:
+
+    rake db:migrate
+
+
 
 **Server**
 

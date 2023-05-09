@@ -51,6 +51,9 @@ gem "rover-df"
 # Use Numo/Narray for vector operations
 gem "numo-narray"
 
+# define CORS policy
+gem 'rack-cors'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
