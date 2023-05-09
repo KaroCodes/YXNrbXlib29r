@@ -20,7 +20,7 @@ export default Home = () => {
                     <Link to={BOOK_LINK} target="_blank">
                         <img src={cover} loading="lazy" />
                     </Link>
-                    <h1>Ask My Book</h1>
+                    <h1>Ask Not-My Book</h1>
                 </div>
                 <div className="main">
                     <p>This is an experiment in using AI to make my book's content more accessible. Ask a question and AI'll answer it in real-time:</p>

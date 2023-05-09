@@ -19,6 +19,7 @@ textarea {
     padding: calc(var(--gridBaseline) * 2);
     color: #fff;
     font-size: var(--fontSize);
+    resize: vertical;
 }
 
 button {
