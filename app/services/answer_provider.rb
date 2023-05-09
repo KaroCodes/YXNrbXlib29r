@@ -1,5 +1,7 @@
 require 'openai'
 
+MAX_SECTION_LEN = 500
+
 class AnswerProvider < ApplicationService
 
     attr_reader :question
