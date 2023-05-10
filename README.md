@@ -5,7 +5,7 @@ If the name of this app doesn't make any sense try decoding it with base64 🙃
 ## Tech stack:
 * Backend: Ruby 3.2.2, Rails 7
 * Frontend: Yarn, JavaScript, React
-* Test: RSpec, FactoryBot
+* Test: RSpec
 
 ## Run
 
@@ -50,4 +50,5 @@ To test individual service (e.g. `SectionPicker`) run:
     rspec spec/services/section_picker_spec.rb
 
 ## Deploy
-TODO
+
+Automatic via `DigitalOcean` - just push to main and it will trigger a deploy.
